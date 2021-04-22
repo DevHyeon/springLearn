@@ -10,11 +10,13 @@
 
 	<bean id="target" class="spring.aop.entity.NewlecExam" p:kor="1" p:eng="1" p:math="1" p:com="1"/>
 	<bean id="LogAroundAdvice" class="spring.aop.advice.LogAroundAdvice"></bean>
+	<bean id="LogBeforeAdvice" class="spring.aop.advice.LogBeforeAdvice"></bean>
 	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="target" ref="target"/>
 		<property name="interceptorNames">
 			<list>
 				<value>LogAroundAdvice</value>
+				<value>LogBeforeAdvice</value>
 			</list>		
 		</property>
 	
